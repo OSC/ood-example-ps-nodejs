@@ -4,6 +4,7 @@ var exec = require('child_process').exec;
 var express   = require('express');
 var hbs       = require('hbs');
 var path      = require('path');
+var baseUri   = process.env.PASSENGER_BASE_URI || '/';
 
 
 // create routes
@@ -12,6 +13,7 @@ var router = express.Router();
 router.get("/", function(request, response){
   exec('ps ufx', function(error, stdout, stderr){
     response.render('index', {
+      baseUri: baseUri,
       date: new Date(),
       output: stdout
     });
@@ -25,6 +27,6 @@ var app = express();
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(process.env.PASSENGER_BASE_URI || '/', router);
+app.use(baseUri, router);
 
 app.listen(3000);
