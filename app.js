@@ -11,7 +11,10 @@ var router = express.Router();
 
 router.get("/", function(request, response){
   exec('ps ufx', function(error, stdout, stderr){
-    response.send("<h2>" + new Date() + "</h2>\n<pre>" + stdout + "</pre>\n");
+    response.render('index', {
+      date: new Date(),
+      output: stdout
+    });
   });
 });
 
