@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express":  "^4.14.0",
+    "hbs":      "^4.0.1"
+  },
+  "private": true
+}
