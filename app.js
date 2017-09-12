@@ -24,7 +24,8 @@ router.get("/", function(request, response){
 var app = express();
 
 // Setup template engine
-app.set('view engine', 'hbs');
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(baseUri, router);
