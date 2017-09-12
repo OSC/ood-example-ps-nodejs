@@ -15,7 +15,9 @@ router.get("/", function(request, response){
     response.render('index', {
       baseUri: baseUri,
       date: new Date(),
-      output: stdout
+      output: stdout,
+      title: "Running Processes",
+      error: stderr
     });
   });
 });
