@@ -1,6 +1,6 @@
 // a minimal node app that displays your running processes on the OOD web host
-var http = require('http');
-var exec = require('child_process').exec;
+var http      = require('http');
+var exec      = require('child_process').exec;
 var express   = require('express');
 var hbs       = require('hbs');
 var path      = require('path');
