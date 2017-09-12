@@ -17,7 +17,9 @@ router.get("/", function(request, response){
       date: new Date(),
       output: stdout,
       title: "Running Processes",
-      error: stderr
+      error: stderr,
+      // uncomment if you want to reload:
+      // reload: 15
     });
   });
 });
